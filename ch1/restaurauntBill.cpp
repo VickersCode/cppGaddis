@@ -7,6 +7,23 @@ Write a program that computes the tax and tip on a restauraunt bill for a patron
 using namespace std;
 
 int main() {
+    float TAX = 0.0675;
+    float TIP = 0.15;
+    float meal = 44.5;
+
+    float mealTax = meal * TAX;
+    float mealAndTax = meal + mealTax;
+    
+
+    float tip = mealAndTax * TIP;
+    float total = mealAndTax + tip;
+
+    cout << "===================\n";
+    cout << "Meal: $" << meal << "\n";
+    cout << "Tax: $" << mealTax << "\n";
+    cout << "Tip: $" << tip << "\n";
+    cout << "Total: $" << total;
+    
 
     return 0;
 }
