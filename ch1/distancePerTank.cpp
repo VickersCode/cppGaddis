@@ -7,6 +7,13 @@ using namespace std;
 
 int main() {
 
+    int TANK_GALLONS = 20;
+
+    float mpgHighway = 36.8 / TANK_GALLONS;
+    float mpgTown = 21.5 / TANK_GALLONS;
+
+    cout << "The car gets " << mpgHighway << "mpg highway. \n";
+    cout << "and " << mpgTown << "mpg in the town.";
 
     return 0;
 }
