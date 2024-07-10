@@ -12,10 +12,46 @@ Assume the theater keeps 20% of the gross box office profit.
 */
 
 #include <iostream>
+#include <string>
+#include <iomanip>
 using namespace std;
 
 int main() {
 
+    string movieName;
+
+    int adultTickets,
+        childTickets;
+
+    double grossProfit,
+           dstrPymnt,
+           netProfit;
+
+    const double DIST_PERC = 0.2,
+                 ADULT_TICKET = 6,
+                 CHILD_TICKET = 3;
+
+    cout << "Enter the name of the movie: ";
+    getline(cin, movieName);
+
+    cout << "Adult tickets sold: ";
+    cin >> adultTickets;
+
+    cout << "Child tickets sold: ";
+    cin >> childTickets;
+
+    grossProfit = (childTickets * CHILD_TICKET) + (adultTickets * ADULT_TICKET);
+    dstrPymnt = grossProfit * DIST_PERC;
+    netProfit = grossProfit - dstrPymnt;
+
+    
+    cout << setw(26) << left << "Movie Name:" << setw(25) << right << movieName << endl;
+    cout << setw(26) << left << "Adult tickets sold:" << setw(25) << right << adultTickets << endl;
+    cout << setw(26) << left << "Child Tickets sold: " << setw(25) << right << childTickets << endl;
+    cout << fixed << setprecision(2);
+    cout << setw(26) << left << "Gross Box Office Profit:" <<  setw(25) << right << "$" << grossProfit << endl;
+    cout << setw(26) << left << "Amount Paid to Distr:" << setw(25) << right << "$" << dstrPymnt << endl;
+    cout << setw(26) << left << "Net Box Office Profit:" << setw(25) << right << "$" << netProfit << endl;
     
 
     return 0;
