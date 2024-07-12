@@ -17,11 +17,37 @@ Write a program that asks for the principal, the interest rate, and the number o
 
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 using namespace std;
 
 int main() {
 
+    double principle,
+           interestRate,
+           interest,
+           finalBalance;
 
+    double timesCompounded;
+
+    cout << "Enter the principal amound: \n$";
+    cin >> principle;
+    cout << "Enter the interest rate: \n$";
+    cin >> interestRate;
+    cout << "Enter compounds per year: \n";
+    cin >> timesCompounded;
+
+    interestRate /= 100;
+
+    finalBalance = principle * pow(1 + interestRate/timesCompounded, timesCompounded);
+    
+    interest = finalBalance - principle;
+
+    cout << fixed << setprecision(2);
+    cout << setw(25) << left << "Interest Rate: " << setw(9) << right << interestRate*100 << setw(1) << "%" << endl;
+    cout << setw(25) << left << "Times Compounded: " << setw(9) << right << timesCompounded << endl;
+    cout << setw(25) << left << "Principal: " << setw(1) << "$" << setw(8) << right << principle << endl;
+    cout << setw(25) << left << "Interest: " << setw(1) << "$" << setw(8) << right << interest << endl;
+    cout << setw(25) << left << "Final Balance: " << setw(1) << "$" << setw(8) << right << finalBalance;
 
     return 0;
 }
