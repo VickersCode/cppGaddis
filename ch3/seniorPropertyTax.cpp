@@ -6,8 +6,26 @@ Madison County provides a $5000 homeowner exemption for its senior citizens. For
 #include <iomanip>
 using namespace std;
 
-int main () {
+int main() {
 
+    double taxRate,
+           houseVal,
+           assessVal,
+           propertyTax;
+
+    cout << "Enter the house value: \n$";
+    cin >> houseVal;
+
+    cout << "Enter the tax rate (per $100): \n$";
+    cin >> taxRate;
+
+    assessVal = houseVal * 0.6 - 5000;
+    propertyTax = assessVal/100 * taxRate;
+
+
+    cout << fixed << setprecision(2);
+    cout << "Your property tax is: $" << propertyTax << endl;
+    cout << "Your quarterly payments are: $" << propertyTax / 4;
 
 
     return 0;
