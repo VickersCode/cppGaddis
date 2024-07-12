@@ -3,11 +3,25 @@ Madison County collects property taxes on the assessed value of property, which 
 */
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 int main() {
 
-    
+    double taxRate,
+           assessVal,
+           propertyTax;
+
+    cout << "Enter the assessed value: \n$";
+    cin >> assessVal;
+    cout << "Enter the tax rate (per $100): \n$";
+    cin >> taxRate;
+
+    propertyTax = (assessVal * 0.6)/100 * taxRate;
+
+    cout << fixed << setprecision(2);
+    cout << "Your property tax is : $" << propertyTax;
+
 
     return 0;
 }
