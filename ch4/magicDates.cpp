@@ -11,7 +11,24 @@ using namespace std;
 
 int main(){
 
+    int day,
+        month,
+        year;
 
+    cout << "Enter the month, in numeric form: \n";
+    cin >> month;
+    cout << "Enter the day: \n";
+    cin >> day;
+    cout << "Enter the year in two digit form: \n";
+    cin >> year;
+
+    if ((month * day) == year)
+    {
+        cout << "This is a magic date.";
+    }
+    else {
+        cout << "This is not a magic date.";
+    }
 
     return 0;
 }
