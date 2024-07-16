@@ -20,7 +20,7 @@ using namespace std;
 int main()
 {
 
-    unsigned int quantity;
+    int quantity;
     double discount,
            total;
 
@@ -39,17 +39,18 @@ int main()
             discount = 0.4;
         else
             discount = 0.5;
+
+        total = quantity * 99;
+        total -= (quantity * discount);
+
+        cout << fixed << setprecision(2);
+        cout << "Your total is $" << total;
+
     }
     else
         cout << "You entered an invalid number. Please run the program again.";
 
-    total = quantity * 99;
-    total -= (quantity * discount);
-
-    cout << fixed << setprecision(2);
-    cout << "Your total is $" << total;
-
-    
+       
 
     return 0;
 }
