@@ -7,9 +7,20 @@ using namespace std;
 int main()
 {
     char asciiChar;
+    int newLine = 0;
+    char printI;
 
     for (int i = 32; i < 128; i++)
     {
+        if (newLine == 15)
+            {
+                cout << "\n";
+                newLine = 0;
+            }
+
+        printI = i;
+        cout << printI << " ";
+        newLine += 1;
         
     }
 
