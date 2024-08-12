@@ -8,3 +8,50 @@ The program should have a function named calculateRetail that receives the whole
 
 Input Validation: Do not accept negative valuesfor either the wholesale cost of the item or the markup percentage.
 */
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+double calculateRetail(double wholesale, double percentage);
+
+int main() 
+{
+    double wholesale, 
+           percentage,
+           total;
+
+    
+    while (wholesale < 1)
+    {
+        cout << "Please enter the wholesale cost: \n";
+        cin >> wholesale;
+    }
+    
+    cout << endl;
+    
+    while (percentage < 1)
+    {
+        cout << "Please enter the markup percentage:\n";
+        cin >> percentage;
+    }
+    
+
+    percentage *= 0.01;
+
+    total = calculateRetail(wholesale, percentage);
+
+    cout << fixed << setprecision(2);
+    cout << "You're total retail price is: " << total;
+
+    return 0;
+}
+
+double calculateRetail(double wholesale, double percentage)
+{
+    double retail, markup;
+    markup = wholesale * percentage;
+    retail = wholesale + markup;
+
+    return retail;
+}
